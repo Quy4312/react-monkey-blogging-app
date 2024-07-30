@@ -7,7 +7,8 @@ import { userRole } from "utils/constants";
 
 const UserManage = () => {
   const { userInfo } = useAuth();
-  if (userInfo.role !== userRole.ADMIN) return null;
+  if (userInfo.role !== userRole.ADMIN)
+    return <div>This page is for ADMIN only</div>;
   return (
     <div>
       <DashboardHeading title="Users" desc="Manage your user">
